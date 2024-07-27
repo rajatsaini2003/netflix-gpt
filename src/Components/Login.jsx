@@ -1,9 +1,15 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../untils/firebase"
-import { checkValidData } from '../untils/validations';
+import {auth} from '../utils/firebase'
+import { checkValidData } from '../utils/validations';
+import { useNavigate } from 'react-router-dom';
+import { updateProfile } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../store/userSlice';
 function Login() {
+  const dispatch=useDispatch();
+    const navigate=useNavigate();
     const [isSignInForm,setIsSignInForm]=useState(true);
     const [errorMessage,setErrorMessage]=useState(null);
     const email=useRef(null);
@@ -25,13 +31,30 @@ function Login() {
           .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
-            console.log('User signed in:', user);
+            updateProfile(user, {
+              displayName: userName.current.value, 
+              photoURL: "https://avatars.githubusercontent.com/u/133947980?v=4"
+            }).then(() => {
+              console.log('User signed up:', user);
+              const {uid,email,displayName,photoURL} = auth.currentUser;
+              dispatch(
+                addUser({
+                uid:uid,
+                email:email,
+                displayName:displayName,
+                photoURL:photoURL
+              }));
+              navigate("/browse");
+            }).catch((error) => {
+              setErrorMessage(error.message);
+            });
             })
             .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             setErrorMessage(errorMessage+"-"+errorCode);
             });
+            
         }
         else{
           // sign in
@@ -40,11 +63,12 @@ function Login() {
           // Signed in 
            const user = userCredential.user;
            console.log('User signed in:', user);
+           navigate("/browse");
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            setErrorMessage(errorMessage+"-"+errorCode);
+            setErrorMessage("Incorrect email or password");
   });
         }
         
