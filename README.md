@@ -15,6 +15,10 @@
 - created redux user store 
 - implemented sign out 
 - update profile 
+- Bug fix : if the user is not login redirected to login page else if the user is login redirected to browse page
+- unsubscribe to the onAuthstateChange callback
+- Add hardcoded vales to the constants
+- Register TMDB API & create app & get access token
 
 # Features
 
