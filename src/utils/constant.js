@@ -4,8 +4,9 @@ export const BG_IMG_URL="https://assets.nflxext.com/ffe/siteui/vlv3/655a9668-b00
 
 export const USER_AVATAR="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg";
 
+export const Play_Icon='https://www.friidesigns.com/wp-content/uploads/2018/11/white-play-icon-png-6.png';
 export const API_OPTIONS = {
-    //get your own api
+    //get your own api key
   };
 
 

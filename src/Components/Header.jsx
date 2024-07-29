@@ -43,13 +43,13 @@ function Header() {
     <div className='absolute px-8 py-2 bg-gradient-to-b from-black 
      z-10 w-full flex justify-between '>
       <img 
-      className='w-36 mx-24 my-6 '
+      className='w-36 mx-8 my-6 '
       src={LOGO_URL} 
       alt="LOGO" />
       { user &&
-        (<div className='flex'>
+        (<div className='flex my-6 gap-2'>
         <img 
-        className='w-12 h-12 my-6'
+        className='w-12 h-12 '
         src={user.photoURL} 
         alt="usericon"/>
         <button onClick={handleSignOut}
