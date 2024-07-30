@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.movieList {
+    overflow: scroll;
+    scrollbar-gutter: stable; /* This keeps the layout stable */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, and newer Edge) */
+.movieList::-webkit-scrollbar {
+    display: none;
+}

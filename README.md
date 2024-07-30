@@ -19,6 +19,16 @@
 - unsubscribe to the onAuthstateChange callback
 - Add hardcoded vales to the constants
 - Register TMDB API & create app & get access token
+- Get Data from TMDB now playing movies list api
+- custom hook for now playing movies 
+- create movie slice
+-  update store with movie list
+- fetch data for trailer video
+- embedded the youtube video
+- build secondary container
+- build movieList and movieCard
+- custom hooks fot toprated , upcoming and popular movies
+- added buttons for play/stop and muting/unmuting of trailer in main component
 
 # Features
 

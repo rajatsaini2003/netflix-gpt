@@ -70,12 +70,12 @@ function Login() {
         
     }
   return (
-    <div className=''>
+    <div >
       <Header/>
       <div className='absolute'>
         <img 
         src={BG_IMG_URL}
-        alt=''/>
+        alt='background-img'/>
       </div>
       <form 
       onSubmit={(e)=>e.preventDefault()}
