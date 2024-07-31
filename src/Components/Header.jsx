@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser,removeUser } from '../store/userSlice';
 import { LOGO_URL } from '../utils/constant';
+import { toggleGptSearch } from '../store/gptSlice'
 function Header() {
   const user=useSelector(store=>store.user);
   const navigate=useNavigate();
@@ -39,6 +40,10 @@ function Header() {
       navigate("/error")
     });
   }
+  const handleGptSearch=()=>{
+    //toggle GPT search
+    dispatch(toggleGptSearch());
+  }
   return (
     <div className='absolute px-8 py-2 bg-gradient-to-b from-black 
      z-10 w-screen flex justify-between '>
@@ -48,6 +53,11 @@ function Header() {
       alt="LOGO" />
       { user &&
         (<div className='flex my-6 gap-2'>
+          <button
+          onClick={handleGptSearch}
+          className='py-2 px-4 m-2 mx-4 cursor-pointer bg-purple-800 text-white rounded-lg  ' >
+            GPT search
+          </button>
         <img 
         className='w-12 h-12 '
         src={user.photoURL} 

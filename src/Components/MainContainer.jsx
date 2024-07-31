@@ -13,7 +13,7 @@ const MainContainer = () => {
 
   const mainMovie=movies[0]; 
   //console.log(mainMovie.id);
-  const {original_title,overview}=mainMovie
+  const {original_title,overview}=mainMovie;
 
   return (
     <div >
