@@ -29,6 +29,8 @@
 - build movieList and movieCard
 - custom hooks fot toprated , upcoming and popular movies
 - added buttons for play/stop and muting/unmuting of trailer in main component
+- GPT search Bar
+- Made GPT search Page Multilingual
 
 # Features
 

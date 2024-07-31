@@ -17,7 +17,7 @@ const Browse = () => {
   useTopRatedMovies();
   usePopularMovies();
   useUpcomingMovies();
-  console.log(showGptSearch);
+  //console.log(showGptSearch);
   return (
     <div className='overflow-x-hidden' > 
         <Header />

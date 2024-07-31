@@ -12,4 +12,10 @@ export const API_OPTIONS = {
     // get your own api key
 };
 
+export const supportedLanguages=[
+  {identifier:"en",name:"English"},
+  {identifier:"hi",name:"Hindi"},
+  {identifier:"jp",name:"Japanese"},
+  {identifier:"sp",name:"Spanish"}
+]
 
