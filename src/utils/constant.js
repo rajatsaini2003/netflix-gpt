@@ -9,8 +9,10 @@ export const Play_Icon='https://www.friidesigns.com/wp-content/uploads/2018/11/w
 export const IMG_URL="http://image.tmdb.org/t/p/w500" 
 
 export const API_OPTIONS = {
-    // get your own api key
+  
 };
+
+export const OPENAI_KEY=""
 
 export const supportedLanguages=[
   {identifier:"en",name:"English"},

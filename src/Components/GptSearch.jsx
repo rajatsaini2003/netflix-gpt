@@ -8,6 +8,7 @@ const GptSearch = () => {
     <div>
       <div className='absolute -z-10'>
         <img 
+        className='w-[100vw] h-[100vh]'
         src={BG_IMG_URL}
         alt='background-img'/>
       </div>
