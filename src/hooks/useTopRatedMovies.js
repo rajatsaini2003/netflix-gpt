@@ -1,11 +1,12 @@
 
 import { API_OPTIONS } from '../utils/constant';
-import { useDispatch } from'react-redux';
+import { useDispatch, useSelector } from'react-redux';
 import {addTopRatedMovies} from "../store/movieSlice";
 import { useEffect } from 'react';
 
 const useTopRatedMovies=()=>{
     const dispatch=useDispatch();
+    const movies=useSelector(store=>store.movies.topRatedMovies)
     const getMovies = async () =>{
 
     const top_rated=await  fetch(
@@ -19,6 +20,7 @@ const useTopRatedMovies=()=>{
     };
 
     useEffect(()=>{
+        if(!movies)
         getMovies();
         // eslint-disable-next-line
     },[]);

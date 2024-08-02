@@ -9,10 +9,14 @@ export const Play_Icon='https://www.friidesigns.com/wp-content/uploads/2018/11/w
 export const IMG_URL="http://image.tmdb.org/t/p/w500" 
 
 export const API_OPTIONS = {
-  
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer '+process.env.REACT_APP_TMDB_KEY
+  }
 };
 
-export const OPENAI_KEY=""
+export const GEMINI_API=process.env.REACT_APP_GEMINI_API
 
 export const supportedLanguages=[
   {identifier:"en",name:"English"},

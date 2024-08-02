@@ -1,11 +1,12 @@
 
 import { API_OPTIONS } from '../utils/constant';
-import { useDispatch } from'react-redux';
+import { useDispatch, useSelector } from'react-redux';
 import {addUpcomingMovies} from "../store/movieSlice";
 import { useEffect } from 'react';
 
 const useUpcomingMovies=()=>{
     const dispatch=useDispatch();
+    const movies=useSelector(store=>store.movies.upcomingMovies)
     const getMovies = async () =>{
 
     
@@ -19,6 +20,7 @@ const useUpcomingMovies=()=>{
     dispatch(addUpcomingMovies(upcomingJson.results));
     };
     useEffect(()=>{
+        if(!movies)
         getMovies();
         // eslint-disable-next-line
     },[]);

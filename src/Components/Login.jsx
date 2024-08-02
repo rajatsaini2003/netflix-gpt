@@ -34,7 +34,7 @@ function Login() {
               displayName: userName.current.value, 
               photoURL: USER_AVATAR
             }).then(() => {
-              console.log('User signed up:', user);
+              //console.log('User signed up:', user);
               const {uid,email,displayName,photoURL} = auth.currentUser;
               dispatch(
                 addUser({
@@ -60,7 +60,7 @@ function Login() {
           .then((userCredential) => {
           // Signed in 
            const user = userCredential.user;
-           console.log('User signed in:', user);
+           //console.log('User signed in:', user);
           })
           .catch((error) => {
             console.log(error.message);

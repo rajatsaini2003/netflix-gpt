@@ -31,6 +31,10 @@
 - added buttons for play/stop and muting/unmuting of trailer in main component
 - GPT search Bar
 - Made GPT search Page Multilingual
+- Integrated Gpt(Gemini) Api to get movie suggestions
+- used Tmdb API to get moveis from gpt suggestions
+- used movieList to show the movies recommended by gpt 
+
 
 # Features
 
