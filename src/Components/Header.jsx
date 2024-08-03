@@ -53,14 +53,14 @@ function Header() {
     dispatch(changeLanguage(e.target.value));
   }
   return (
-    <div className='absolute px-8 py-2 bg-gradient-to-b from-black 
-     z-10 w-screen flex justify-between '>
+    <div className='absolute px-2 md:px-8 py-2 bg-gradient-to-b from-black 
+     z-10 w-screen flex flex-col md:flex-row md:justify-between '>
       <img 
-      className='w-36 mx-8 my-6 '
+      className='w-36 md:mx-8 my-6 mx-auto '
       src={LOGO_URL} 
       alt="LOGO" />
       { user &&
-        (<div className='flex my-6 gap-2'>
+        (<div className='flex my-auto gap-2 justify-between'>
           {showgptSearch&&(<select 
           onChange={handleLangChange}
           className='p-2 m-2 bg-gray-900 text-white rounded-lg cursor-pointer'>
@@ -79,11 +79,11 @@ function Header() {
            { showgptSearch?lang[langKey].homePage:"GPT search"}
           </button>
         <img 
-        className='w-12 h-12 '
+        className='w-12 h-12 my-auto'
         src={user.photoURL} 
         alt="usericon"/>
         <button onClick={handleSignOut}
-        className="font-bold text-white">
+        className="font-bold text-white my-auto ">
           (sign out)
         </button>
       </div>

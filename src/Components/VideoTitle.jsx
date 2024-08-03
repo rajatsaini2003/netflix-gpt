@@ -1,8 +1,11 @@
 import React from 'react'
 import { Play_Icon } from '../utils/constant'
-const VideoTitle = ({title,overview,play,setPlayFunc,audio,setAudioFunc}) => {
+import { useDispatch } from 'react-redux'
+import { changePlayConfig } from '../store/movieSlice'
+const VideoTitle = ({title,overview,play,audio,setAudioFunc}) => {
+  const dispatch=useDispatch();
   const handlePlayClick=()=>{
-    setPlayFunc(!play);
+    dispatch(changePlayConfig());
   }
   const handleAudioClick=()=>{
     // add audio control
@@ -16,25 +19,28 @@ const VideoTitle = ({title,overview,play,setPlayFunc,audio,setAudioFunc}) => {
 }
   const truncatedoverview = truncateString(overview, 200); 
   return (
-    <div className='w-screen aspect-video pt-[20%] px-24 pl-12 absolute text-white 
+    <div className='w-screen aspect-video px-4 pt-[35%] md:pt-[20%] md:px-24 md:pl-12 absolute text-white 
     bg-gradient-to-r from-black'>
         <h1 
-        className='text-4xl font-extrabold '
+        className='flex md:text-4xl font-extrabold mb-2 '
         >{title}</h1>
         <p
-        className='py-6 text-lg w-1/4 '
+        className='hidden md:inline-block py-6 text-lg w-1/4 '
         >{truncatedoverview}</p>
         <div className='flex gap-4'>
             <button onClick={handlePlayClick}
             className=' flex justify-center items-center bg-gray-700 text-white
             bg-opacity-80 p-2 w-24 rounded-md text-md font-bold hover:bg-opacity-70 '
             >
-              {<img className='w-6 h-6'
+              {!play?
+              <img className='w-6 h-6'
               src= {Play_Icon} alt='play-icon'
-              />} 
+              />:
+              null
+            } 
                {play?"Stop":"Play"}</button>
             <button
-            className= 'bg-gray-700 font-bold text-white p-2 w-24 rounded-md text-md bg-opacity-80 hover:bg-opacity-70  '
+            className= 'hidden md:inline-block bg-gray-700 font-bold text-white p-2 w-24 rounded-md text-md bg-opacity-80 hover:bg-opacity-70  '
             >More Info</button>  
              {play ? (
           <button

@@ -59,6 +59,7 @@ function Login() {
           signInWithEmailAndPassword(auth, email.current.value,password.current.value)
           .then((userCredential) => {
           // Signed in 
+          // eslint-disable-next-line 
            const user = userCredential.user;
            //console.log('User signed in:', user);
           })
@@ -74,13 +75,14 @@ function Login() {
       <Header/>
       <div className='absolute'>
         <img 
+        className='h-screen w-screen object-cover'
         src={BG_IMG_URL}
         alt='background-img'/>
       </div>
       <form 
       onSubmit={(e)=>e.preventDefault()}
-       className='p-12 absolute mt-24  text-white mx-auto right-0 left-0 
-       w-4/12 bg-black rounded-lg bg-opacity-80 ' >
+       className='px-12 py-3 absolute md:mt-24 mt-[20vh] text-white  right-0 left-0 
+         md:w-4/12 sm:w-8/12 sm:mx-auto mx-[5%] md:mx-auto bg-black rounded-lg bg-opacity-80 ' >
         <h1 
         className='font-bold text-3xl py-4 p-2'>
           {isSignInForm?"Sign In":"Sign Up"}</h1>

@@ -5,7 +5,9 @@ const MovieList = ({title,movies}) => {
     //console.log(movies)
   return (
     <div className='bg-transparent text-white'>
-        <h1 className='text-3xl py-4'>{title}</h1>
+        <h1 
+        className='text-xl md:text-3xl py-4'>
+        {title}</h1>
         <div className='flex overflow-x-scroll movieList '>
             <div className='flex'>
                 {

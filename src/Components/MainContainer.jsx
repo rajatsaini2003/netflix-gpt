@@ -7,7 +7,7 @@ import { useState } from 'react';
 const MainContainer = () => {
 
   const movies=useSelector(store=>store.movies?.nowPlayingMovies);
-  const [play,setPlay]=useState(1);
+  const play=useSelector(store=>store.movies?.play)
   const [audio,setAudio]=useState(0);
   if(!movies) return ;
 
@@ -16,9 +16,9 @@ const MainContainer = () => {
   const {original_title,overview}=mainMovie;
 
   return (
-    <div >
+    <div className='pt-[40%] bg-black md:pt-0' >
       <VideoTitle title={original_title} overview={overview} play={play} audio={audio}
-        setPlayFunc={(play)=>{setPlay(play)}}
+        
         setAudioFunc={(audio)=>{setAudio(audio)}}
       />
       <VideoBackground movieId={mainMovie.id} play={play} audio={audio}/>

@@ -16,7 +16,7 @@ function Body() {
     ]);
 
   return (
-    <div>
+    <div className=''>
       <RouterProvider router={createRouter} />
     </div>
   )
