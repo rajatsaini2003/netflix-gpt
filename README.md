@@ -1,54 +1,67 @@
 # Netflix-GPT
-
-- create react app
-- configure tailwind css
-- Header
-- Routing of App
-- Login Form
-- sign up form
-- Form validation
-- useRef Hook
-- FireBase setup
-- Deploying our App to production
-- create sign up user account
-- implement sign in user api
-- created redux user store 
-- implemented sign out 
-- update profile 
-- Bug fix : if the user is not login redirected to login page else if the user is login redirected to browse page
-- unsubscribe to the onAuthstateChange callback
-- Add hardcoded vales to the constants
-- Register TMDB API & create app & get access token
-- Get Data from TMDB now playing movies list api
-- custom hook for now playing movies 
-- create movie slice
--  update store with movie list
-- fetch data for trailer video
-- embedded the youtube video
-- build secondary container
-- build movieList and movieCard
-- custom hooks fot toprated , upcoming and popular movies
-- added buttons for play/stop and muting/unmuting of trailer in main component
-- GPT search Bar
-- Made GPT search Page Multilingual
-- Integrated Gpt(Gemini) Api to get movie suggestions
-- used Tmdb API to get moveis from gpt suggestions
-- used movieList to show the movies recommended by gpt 
+Netflix-GPT is a React-based web application that mimics the Netflix UI and functionalities. It includes features such as user authentication, movie browsing, trailers, and movie recommendations using GPT (Gemini) and TMDB APIs. The app is styled using Tailwind CSS and is deployed on Netlify.
 
 
 # Features
+## Authentication
+- Login/Signup: Users can create an account or log in to an existing account.
+- Sign In/Sign Up Form
+- Redirect to Browse Page after successful login/signup
+- Form Validation: Validation for login and signup forms using useRef hook.
+- Sign Out: Users can sign out of their account.
+- Profile Update: Users can update their profile information.
+- Redirect: Redirect to the login page if the user is not logged in and to the browse page if the user is logged in.
+  
+## Browsing Movies
+- Header: Navigation header with links.
+- Main Movie Section:
+  - Trailer playing in the background
+  - Title and description of the main movie
+- Movie Recommendations:
+  - Display list of movies categorized as "Now Playing", "Top Rated", "Upcoming", and "Popular" using custom hooks.
+  - Play/stop and mute/unmute buttons for the trailer in the main component.
+## Netflix-GPT
+- GPT Search Bar: Allows users to search for movie recommendations.
+- Multilingual Support: GPT search page supports multiple languages.
+- Movie Suggestions:
+  - Integrated GPT (Gemini) API to get movie suggestions based on user queries.
+  - Fetch movies from TMDB API using GPT suggestions.
+  - Display the movies recommended by GPT.
+## Tech Stack
+- React: JavaScript library for building user interfaces.
+- Tailwind CSS: Utility-first CSS framework for styling.
+- Redux: State management.
+- Firebase: Authentication 
+- TMDB API: Fetch movie data.
+- GPT (Gemini) API: Get movie recommendations.
 
-- Login/Signup
-    -Sign In/Sign Up Form
-    -Redirect to Browse Page
+# Usage
+- Visit the login page to sign up or log in.
+- Browse the available movies on the browse page.
+- Use the GPT search bar to get movie recommendations.
+  
+# Getting Started
+- To run the project locally, follow these steps:
 
-- Browse (after authentication)
-    - Header
-    - Main Movie
-        - Trailer in background
-        - Title & Description
-        - Movies reccomendations
-            - MovieList * N
-- Netflix-GPT
-    - search Bar
-    - Movie suggestions
+## Clone the repository:
+
+In bash:
+- git clone https://github.com/rajatsaini2003/netflix-gpt.git
+- cd netflix-gpt
+
+## Install dependencies:
+- npm install
+
+## Run the app:
+- npm run start
+- Open your browser and navigate to http://localhost:3000 to see the app in action.
+
+# Contributions
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+# Acknowledgments
+Thanks to TMDB and GEMINI for providing the API used in this project.
+Inspired by Netflix platforms for UI/UX design
+
+# License
+- This project is licensed under the MIT License.
