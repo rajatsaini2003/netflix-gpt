@@ -75,7 +75,7 @@ function Login() {
       <Header/>
       <div className='absolute'>
         <img 
-        className='h-screen w-screen object-cover'
+        className='h-fit w-screen object-cover'
         src={BG_IMG_URL}
         alt='background-img'/>
       </div>
