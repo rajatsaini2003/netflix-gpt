@@ -73,12 +73,12 @@ function Login() {
   return (
     <div >
       <Header/>
-      <div className='absolute'>
+      <div className='fixed -z-10'>
         <img 
-        className='h-fit w-screen object-cover'
+        className='w-[100vw] h-[100vh] object-cover'
         src={BG_IMG_URL}
         alt='background-img'/>
-      </div>
+    </div>
       <form 
       onSubmit={(e)=>e.preventDefault()}
        className='px-12 py-3 absolute md:mt-24 mt-[20vh] text-white  right-0 left-0 
