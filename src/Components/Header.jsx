@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser,removeUser } from '../store/userSlice';
-import { LOGO_URL } from '../utils/constant';
 import { toggleGptSearch } from '../store/gptSlice'
 import { supportedLanguages } from '../utils/constant';
 import { changeLanguage } from '../store/configSlice';
@@ -57,7 +56,7 @@ function Header() {
      z-10 w-screen flex flex-col md:flex-row md:justify-between '>
       <img 
       className='w-36 md:mx-8 my-6 mx-auto '
-      src={LOGO_URL} 
+      src={"Logo.png"}
       alt="LOGO" />
       { user &&
         (<div className='flex my-auto gap-2 justify-between'>

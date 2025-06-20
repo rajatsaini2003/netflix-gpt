@@ -6,7 +6,7 @@ import { checkValidData } from '../utils/validations';
 import { updateProfile } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../store/userSlice';
-import { BG_IMG_URL ,USER_AVATAR} from '../utils/constant';
+import {USER_AVATAR} from '../utils/constant';
 function Login() {
   const dispatch=useDispatch();
     const [isSignInForm,setIsSignInForm]=useState(true);
@@ -76,7 +76,7 @@ function Login() {
       <div className='fixed -z-10'>
         <img 
         className='w-[100vw] h-[100vh] object-cover'
-        src={BG_IMG_URL}
+        src="BG.png"
         alt='background-img'/>
     </div>
       <form 
